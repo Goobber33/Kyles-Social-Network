@@ -38,7 +38,61 @@ const userController = {
     }
   },
 
+  // Update a user by its _id
 
+  async updateUser(req, res) {
+    try {
+      const user = await User.findByIdAndUpdate(req.params.id, req.body, { new: true, runValidators: true });
+      res.json(user);
+    } catch (err) {
+      console.error('Error in updateUser:', err);
+      res.status(400).json(err);
+    }
+  },
+
+  // Delete a user by its _id
+
+  async deleteUser(req, res) {
+    try {
+      const user = await User.findByIdAndDelete(req.params.id);
+      res.json(user);
+    } catch (err) {
+      console.error('Error in deleteUser:', err);
+      res.status(500).json(err);
+    }
+  },
+
+  // Add a new friend to a user's friend list
+
+  async addFriend(req, res) {
+    try {
+      const user = await User.findByIdAndUpdate(
+        req.params.userId,
+        { $addToSet: { friends: req.params.friendId } },
+        { new: true }
+      );
+      res.json(user);
+    } catch (err) {
+      console.error('Error in addFriend:', err);
+      res.status(500).json(err);
+    }
+  },
+
+  // Remove a friend from a user's friend list
+  
+  async removeFriend(req, res) {
+    try {
+      const user = await User.findByIdAndUpdate(
+        req.params.userId,
+        { $pull: { friends: req.params.friendId } },
+        { new: true }
+      );
+      res.json(user);
+    } catch (err) {
+      console.error('Error in removeFriend:', err);
+      res.status(500).json(err);
+    }
+  },
 };
 
 module.exports = userController;
