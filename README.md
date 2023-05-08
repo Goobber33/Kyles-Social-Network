@@ -15,8 +15,7 @@ A back-end API for a social network web application, where users can share their
 - [Installation](#installation-)
 - [Usage](#usage-)
 - [API Endpoints](#api-endpoints-)
-- [Technologies](#technologies-)
-- [Video](#video-)
+- [- [Video](#video-🎥)](#video-)
 - [License](#license-)
 
 ## Features 🎯
@@ -57,17 +56,10 @@ Use an API testing tool like [Postman](https://www.postman.com/) or [Insomnia](h
 - `/api/thoughts/:thoughtId/reactions`: Add reactions to a thought
 - `/api/thoughts/:thoughtId/reactions/:reactionId`: Remove reactions from a thought
 
-## Technologies 💻
-
-- Node.js
-- Express.js
-- MongoDB
-- Mongoose
-
-## Video
+## Video 🎥
 
 https://drive.google.com/file/d/1rjlbyo-9joi5ICsoaZVANNMjzjIyoW68/view
 
 ## License 📄
 
-This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
+This project is licensed under the [MIT License](./LICENSE).
