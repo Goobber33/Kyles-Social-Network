@@ -1,4 +1,5 @@
 const router = require('express').Router();
+const thoughtController = require('../controllers/thought-controller');
 
 const {
   getAllThoughts,
@@ -32,5 +33,9 @@ router.route('/:thoughtId/reactions')
 
 router.route('/:thoughtId/reactions/:reactionId')
   .delete(removeReaction);
+
+router.route('/:thoughtId/reactions')
+  .get(thoughtController.getReactionsByThoughtId);
+
 
 module.exports = router;
