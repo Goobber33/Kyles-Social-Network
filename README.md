@@ -16,7 +16,7 @@ A back-end API for a social network web application, where users can share their
 - [Usage](#usage-)
 - [API Endpoints](#api-endpoints-)
 - [Technologies](#technologies-)
-- [Video](#Video-)
+- [Video](#video-)
 - [License](#license-)
 
 ## Features 🎯
